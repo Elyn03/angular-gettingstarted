@@ -1,0 +1,393 @@
+$white: #fff;
+$black: #000;
+$red: #E6142D;
+$grey1: #212121;
+$grey2: #706F6F;
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  height: 10%;
+  display: flex;
+  align-items: center;
+
+  a {
+    height: 100%;
+    vertical-align: middle;
+    img {
+      height: 30px;
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+}
+
+.main-page {
+  width: 100%;
+  height: 85%;
+  display: flex;
+
+  .sidebar {
+    background-color: #333;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    .active {
+      background-color: $red;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 15px 0;
+      margin: 0 15px;
+      transition: background-color 0.3s ease;
+        
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid $white;
+    }
+
+    .search {
+      padding: 10px;
+      color: $grey1;
+      display: flex;
+      background: rgba(243, 243, 243, 0.20);
+
+      form {
+        display: flex;
+
+        input {
+          padding: 10px;
+          width: 100%;
+          background-color: none;
+          color: #fff;
+          font-size: 24px;
+          font-weight: 900;
+          text-transform: uppercase;
+  
+          &:focus {
+            outline: none;
+            background-color: none;
+          }
+  
+          &[type="text"] {
+            background: transparent;
+            border: none;
+          }
+        }
+  
+        button {
+          background: transparent;
+          border: none;
+          outline: inherit;
+          cursor: pointer;
+        }
+  
+        img {
+          height: 40px;
+        }
+      }
+    }
+    
+    .dropdown-content {
+      display: none;
+      background-color: $grey2;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px 50px 100px;
+    gap: 40px;
+    width: 100%;
+
+    .banner {
+      background-color: $red;
+      color: #fff;
+      padding: 15px;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    // Page d'accueil slider
+    .wrapper {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: cover;
+          top: 0;
+          left: 0;
+
+          &:first-child {
+            z-index: 1;
+          }
+
+          &:nth-child(2) {
+            z-index: 0;
+          }
+        }
+      }
+      .navigation-button {
+        text-align: center;
+        position: relative;
+
+        .dot {
+          cursor: pointer;
+          height: 10px;
+          width: 10px;
+          margin: 0 2px;
+          border: 2px solid $red;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        
+        .active, .dot:hover {
+          background-color: $red;
+          border: 2px solid $red;
+        }
+      }
+    }
+
+    // Page accessibilité
+    .txt-access {
+      position: relative;
+      padding: 60px 20px 20px 20px;
+      font-family: Inter;
+      font-size: 20px;
+
+      border: 5px solid $red;
+      border-radius: 25px;
+
+      .rectangle-deco {
+        position: absolute;
+        border-radius: 20px 20px 0 0;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 100%;
+        background-color: $red;
+      }
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+
+    // Page campus
+    .carte-campus {
+      width: 100%;
+      height: 80%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top: 10px solid $red;
+      }
+    }
+
+    // Page contrat
+    .contrat {
+      width: 100%;
+      height: 80%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top: 10px solid $red;
+        object-position: top;
+      }
+    }
+
+    // Page fiche de paie
+    .fiche-paie {
+      width: 100%;
+      height: 80%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top: 10px solid $red;
+        object-position: top;
+      }
+    }
+
+    // Page profil
+    .profil-page {
+      width: 100%;
+      height: 80%;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 2fr 3fr;
+      grid-template-areas: 'pp nom contact'
+        'contrat contrat contact'
+        'contrat contrat contact';
+
+      font-family: Inter;
+      font-size: 20px;
+
+      .banner2 {
+        background-color: $red;
+        color: #fff;
+        padding: 10px;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .case {
+        border: 2px solid $red;
+      }
+      .case-pp {
+        grid-area: pp;
+      }
+      .case-nom {
+        grid-area: nom;
+      }
+      .case-contact {
+        grid-area: contact;
+      }
+      .case-contrat {
+        grid-area: contrat;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        li {
+          padding: 10px 0;
+        }
+      }
+    }
+
+    // Page EDT
+    .page-edt {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .header-edt {
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          gap: 10px;
+
+          font-family: Inter;
+          font-size: 20px;
+
+          li {
+            padding: 5px;
+            border: 1.5px solid $grey2;
+            border-radius: 5px;
+          }
+
+          .arrow {
+            height: 70%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+          }
+          .we-date {
+            margin: 0;
+            display: flex;
+          }
+
+          .btn-edt {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .calendar {
+        width: 100%;
+        height: auto;
+        border-collapse: collapse;
+        border: 2px solid $grey2;
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-family: Inter;
+
+        th, td {
+          border: 1px solid $grey2;
+          padding: 10px;
+          text-align: left;
+        }
+
+        .meeting {
+          background-color: #B1D7F3;
+        }
+        
+        .cours {
+          height: 60px;
+        }
+
+        caption {
+          padding: 10px;
+          caption-side: bottom;
+        }
+
+      }
+    }
+  }
+}
+  
+footer {
+  padding: 0 30px;
+  height: 5%;
+  background-color: $grey1;
+  color: $white;
+  display: flex;
+  justify-items: center;
+}
