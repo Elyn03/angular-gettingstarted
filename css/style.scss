@@ -111,7 +111,7 @@ nav {
       background-color: $grey2;
     }
 
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content, .open {
       display: block;
     }
     

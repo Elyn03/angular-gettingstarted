@@ -91,7 +91,7 @@ nav a img {
   display: none;
   background-color: #706F6F;
 }
-.main-page .sidebar .dropdown:hover .dropdown-content {
+.main-page .sidebar .dropdown:hover .dropdown-content, .main-page .sidebar .open {
   display: block;
 }
 .main-page .content {

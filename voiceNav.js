@@ -32,3 +32,5 @@ recognition.addEventListener('result', (event) => {
    }
 
 });
+
+console.log('SALUT')
